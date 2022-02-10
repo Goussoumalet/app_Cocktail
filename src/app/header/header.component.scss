@@ -1,0 +1,18 @@
+nav {
+  background: var(--primary);
+  color: white;
+}
+.logo {
+  font-size: 18px;
+  font-weight: 700px;
+}
+
+ul {
+  li {
+    display: inline-block;
+    &:hover {
+      background-color: var(--secondary);
+    }
+  }
+  transition: all 0.4s;
+}
