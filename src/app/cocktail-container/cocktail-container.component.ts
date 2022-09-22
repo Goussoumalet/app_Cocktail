@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Cocktails } from '../interface/cocktails-interface';
 
 @Component({
-  selector: 'app-cocktails-list',
-  templateUrl: './cocktails-list.component.html',
-  styleUrls: ['./cocktails-list.component.scss'],
+  selector: 'app-cocktail-container',
+  templateUrl: './cocktail-container.component.html',
+  styleUrls: ['./cocktail-container.component.scss'],
 })
-export class CocktailsListComponent implements OnInit {
-  cocktails: Cocktails[] = [
+export class CocktailContainerComponent implements OnInit {
+  public cocktails: Cocktails[] = [
     {
       name: 'Mojito',
       img: 'https://boiremixologie.com/files/medias/_thumb/mojito.jpg',
@@ -39,8 +39,16 @@ export class CocktailsListComponent implements OnInit {
         'Le rhum &Coke, ou Cuba Libre pour le reste de la planète (au Québec, on aime être différent), a été popularisé à l’époque de la prohibition par les mafiosos qui profitaient de Cuba pour vendre leur alcool',
     },
   ];
-
   constructor() {}
 
-  ngOnInit(): void {}
+  public selectedCocktail!: Cocktails;
+
+  ngOnInit(): void {
+    this.selectedCocktail = this.cocktails[0];
+  }
+
+  //methode permettant d'écouter le eventEmitter
+  public selectCocktail(index: number): void {
+    this.selectedCocktail = this.cocktails[index];
+  }
 }
