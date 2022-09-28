@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Cocktails } from '../../interface/cocktails-interface';
+import { Cocktail } from 'src/app/shared/interface/cocktail-interface';
 
 @Component({
   selector: 'app-cocktails-details',
@@ -8,7 +8,7 @@ import { Cocktails } from '../../interface/cocktails-interface';
 })
 export class CocktailsDetailsComponent implements OnInit {
   @Input()
-  public cocktail!: Cocktails;
+  public cocktail!: Cocktail;
   constructor() {}
 
   ngOnInit(): void {}

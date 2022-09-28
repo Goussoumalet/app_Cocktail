@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Cocktails } from '../../interface/cocktails-interface';
+import { Cocktail } from 'src/app/shared/interface/cocktail-interface';
 
 @Component({
   selector: 'app-cocktails-list',
@@ -12,7 +12,9 @@ export class CocktailsListComponent implements OnInit {
    * un composant parent vers un composant enfant.
    */
   @Input()
-  public cocktails?: Cocktails[];
+  public cocktails?: Cocktail[];
+
+  @Input() public selectedCocktail!: Cocktail;
 
   /**
    * ajout de EventEmitter sur la propiété output qui permet la communication
