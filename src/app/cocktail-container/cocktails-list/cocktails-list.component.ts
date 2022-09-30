@@ -12,23 +12,23 @@ export class CocktailsListComponent implements OnInit {
    * un composant parent vers un composant enfant.
    */
   @Input()
-  public cocktails?: Cocktail[];
+  public cocktails!: Cocktail[];
 
-  @Input() public selectedCocktail!: Cocktail;
+  // @Input() public selectedCocktail!: Cocktail;
 
   /**
    * ajout de EventEmitter sur la propiété output qui permet la communication
    * entre le composant enfant vers le composant parent
    */
-  @Output()
-  private changeCocktail: EventEmitter<number> = new EventEmitter();
+  // @Output()
+  // private changeCocktail: EventEmitter<number> = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
   // cette méthode permet d'emettre notre event.
-  public selectCocktail(index: number): void {
-    this.changeCocktail.emit(index);
-  }
+  // public selectCocktail(index: number): void {
+  //   this.changeCocktail.emit(index);
+  // }
 }

@@ -11,7 +11,7 @@ import { CocktailService } from '../shared/services/cocktail.service';
 export class CocktailContainerComponent implements OnInit, OnDestroy {
   public cocktails: Cocktail[] = [];
 
-  public selectedCocktail!: Cocktail;
+  // public selectedCocktail!: Cocktail;
 
   public subscription: Subscription = new Subscription();
 
@@ -25,20 +25,20 @@ export class CocktailContainerComponent implements OnInit, OnDestroy {
       })
     );
 
-    this.subscription.add(
-      this.cocktailService.selectedCocktail$.subscribe(
-        (selectedCocktail: Cocktail) => {
-          this.selectedCocktail = selectedCocktail;
-        }
-      )
-    );
+    // this.subscription.add(
+    //   this.cocktailService.selectedCocktail$.subscribe(
+    //     (selectedCocktail: Cocktail) => {
+    //       this.selectedCocktail = selectedCocktail;
+    //     }
+    //   )
+    // );
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  public selectCocktail(index: number): void {
-    this.cocktailService.selectCocktail(index);
-  }
+  // public selectCocktail(index: number): void {
+  //   this.cocktailService.selectCocktail(index);
+  // }
 }

@@ -1,13 +1,9 @@
 <nav
   class="d-flex flex-row flex-justify-content-between padding10 flex-align-item-center debug1"
 >
-  <a href="#" class="logo"> Cocktails</a>
-  <ul>
-    <li class="padding20">
-      <a href="#"> Recettes</a>
-    </li>
-    <li class="padding20">
-      <a href="#">Ingredients</a>
-    </li>
+  <a routerLink="cocktails" class="logo"> Cocktails</a>
+  <ul class="padding20">
+    <li routerLink="cocktails" routerLinkActive="active">Recettes</li>
+    <li routerLink="panier" routerLinkActive="active">Ingredients</li>
   </ul>
 </nav>
