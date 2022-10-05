@@ -22,7 +22,7 @@ export class CocktailService {
       name: 'Martini',
       img: 'https://boiremixologie.com/files/medias/_thumb/capture-ecran-martini.jpg',
       description:
-        '« Martini, shaken, not stirred », comme disait James Bond. Ce cocktail aurait été inventé après l’importation du vermouth italien Martini aux États-Unis',
+        'Martini, shaken, not stirred », comme disait James Bond. Ce cocktail aurait été inventé aprè l’importation du vermouth italien Martini aux États-Unis',
       ingredients: [
         { name: 'Cranberry', quantity: 2 },
         { name: 'Citron', quantity: 1 },
@@ -77,5 +77,24 @@ export class CocktailService {
     return this.cocktails$.value[index];
   }
 
+  //methode permettant d'ajouter un cocktail
+  public addCocktail(cocktail: Cocktail): void {
+    const value = this.cocktails$.value;
+    this.cocktails$.next([...value, cocktail]);
+  }
+
+  //methode permettant d'éditer un cocktail
+  public editCocktail(editedCocktail: Cocktail): void {
+    const value = this.cocktails$.value;
+    this.cocktails$.next(
+      value.map((cocktail: Cocktail) => {
+        if (cocktail.name === editedCocktail.name) {
+          return editedCocktail;
+        } else {
+          return cocktail;
+        }
+      })
+    );
+  }
   constructor() {}
 }

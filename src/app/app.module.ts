@@ -19,6 +19,7 @@ import { SelectedDirective } from './shared/directives/selected.directive';
 //routes
 import { APP_ROUTES } from './app.routes';
 import { CocktailFormComponent } from './cocktail-container/cocktail-form/cocktail-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,12 @@ import { CocktailFormComponent } from './cocktail-container/cocktail-form/cockta
     IngredientListComponent,
     CocktailFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot(APP_ROUTES)],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule.forRoot(APP_ROUTES),
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

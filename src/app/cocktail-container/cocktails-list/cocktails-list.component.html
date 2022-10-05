@@ -1,9 +1,9 @@
 <h3 class="mb-20">Listes des Cocktails</h3>
 <ul class="list-primary mb-20">
   <li
-    [routerLink]="[i]"
+    [routerLink]="[index]"
     routerLinkActive="active"
-    *ngFor="let cocktail of cocktails; let i = index"
+    *ngFor="let cocktail of cocktails; let index = index"
   >
     {{ cocktail.name }}
   </li>
